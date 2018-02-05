@@ -1,0 +1,11 @@
+.g4rf-socialmedia {
+    text-align: right;
+    font-size: 0.9em;
+    color: #aaa;
+    margin: 20px 0 0 0;
+}
+.g4rf-socialmedia a {
+    color: #888;
+    margin: 0 0 5px 5px;
+    font-weight: bold;
+}

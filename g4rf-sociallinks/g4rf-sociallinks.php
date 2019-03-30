@@ -23,19 +23,22 @@ add_filter('the_content', function($content) {
  
     $link = urlencode(get_permalink());
     $text = urlencode(get_the_title());
+    $image = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+    if(!$image) $image = '';
+    $hashtags = urlencode('#wennschönsächsisch #wennscheensäggsch #häschdäg');
     
     $sociallinks = <<<SOCIALLINKS
             
     <div class="g4rf-socialmedia">
         teilen auf:
-        <a href="https://twitter.com/home?status=$text%20$link"
+        <a href="https://twitter.com/home?status=$text%20$link%20$hashtags"
             class="g4rf-twitter" target="_blank">twitter</a>
         <a href="https://www.facebook.com/sharer/sharer.php?u=$link"
             class="g4rf-facebook" target="_blank">facebook</a>
-        <a href="https://plus.google.com/share?url=$link"
-            class="g4rf-googleplus" target="_blank">google+</a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=$link&title=$text&summary=&source="
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=$link&title=$text&summary=#$hashtags&source="
             class="g4rf-linkedin" target="_blank">linkedin</a>
+        <a href="http://pinterest.com/pin/create/button/?url=$link&media=$image&description=$text%20$hashtags"
+            class="g4rf-pinterest" target="_blank">pinterest</a>
     </div>
 SOCIALLINKS;
 

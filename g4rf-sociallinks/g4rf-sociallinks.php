@@ -25,7 +25,7 @@ add_filter('the_content', function($content) {
     $text = urlencode(get_the_title());
     $image = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
     if(!$image) $image = '';
-    $hashtags = urlencode('#wennschönsächsisch #wennscheensäggsch #häschdäg');
+    $hashtags = urlencode('#künstlermitherz #wennscheensäggsch #häschdäg');
     
     $sociallinks = <<<SOCIALLINKS
             
